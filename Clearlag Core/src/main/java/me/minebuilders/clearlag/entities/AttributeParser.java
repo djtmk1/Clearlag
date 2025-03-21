@@ -61,7 +61,7 @@ public class AttributeParser {
             else if (tok.startsWith("onGround"))
                 attribute = new EntityOnGroundAttribute();
             else if (tok.startsWith("id=") || tok.startsWith("material=")) {
-                if (t == EntityType.ITEM) { // Changed 'entity' to 't'
+                if (t == EntityType.ITEM) {
                     String input = tok.substring(3);
                     Material mat = null;
 

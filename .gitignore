@@ -29,6 +29,7 @@
 /lib
 **/target/**
 *.jar
+/out
 
 # Mac Filesystem Dust
 .DS_Store

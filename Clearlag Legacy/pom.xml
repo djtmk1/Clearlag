@@ -17,8 +17,21 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-    <dependencies>
+    <repositories>
+        <!-- Spigot (for 1.21.4) -->
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <!-- Bukkit/CraftBukkit (for 1.7.10) -->
+        <repository>
+            <id>bukkit-repo</id>
+            <url>https://repo.bukkit.org/content/groups/public/</url>
+        </repository>
+    </repositories>
 
+    <dependencies>
+        <!-- Core Clearlag Dependency -->
         <dependency>
             <groupId>me.minebuilders</groupId>
             <artifactId>clearlag-core</artifactId>
@@ -26,6 +39,7 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- CraftBukkit 1.7.10 (Legacy Support) -->
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>craftbukkit</artifactId>
@@ -33,6 +47,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Spigot API 1.21.4 (Modern Support) -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.21.4-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -49,7 +70,6 @@
                     <include>*.yml</include>
                 </includes>
             </resource>
-
         </resources>
 
         <plugins>
@@ -84,8 +104,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
-
 </project>

@@ -61,28 +61,19 @@ public class AttributeParser {
             else if (tok.startsWith("onGround"))
                 attribute = new EntityOnGroundAttribute();
             else if (tok.startsWith("id=") || tok.startsWith("material=")) {
-
-                if (t == EntityType.DROPPED_ITEM) {
-
+                if (t == EntityType.ITEM) { // Changed 'entity' to 't'
                     String input = tok.substring(3);
                     Material mat = null;
 
                     if (Util.isInteger(input)) {
-
                         int id = Integer.parseInt(input);
-
                         Util.warning("ID's are no longer usable in your Spigot version - Please change \"" + id + "\" into the item/block's name");
-
                     } else {
                         mat = Material.getMaterial(input);
-
                         if (mat == null)
                             mat = Material.matchMaterial(input);
                     }
-
-
                     attribute = new EntityMaterialAttribute(mat);
-
                 }
             }
 

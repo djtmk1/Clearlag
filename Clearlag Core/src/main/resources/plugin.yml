@@ -2,8 +2,8 @@ name: ClearLag
 author: bob7l
 description: Clear your lagg!
 main: me.minebuilders.clearlag.Clearlag
-version: 3.2.2
-api-version: 1.13
+version: 3.2.3
+api-version: 1.21
 commands:
   lagg:
     description: Clearlag base command!
